@@ -17,3 +17,21 @@ Content-Type: application/json
     "username" : "wachira90",
     "password" : "password1234"
 }
+
+### add 1
+
+POST http://localhost:3000/books
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTM5NTM1MzcsInN1YiI6IjEifQ.hUjnVLcSqMlYIr26KWYWpefnpJn0qUzErugMqNbnKac
+Content-Type: application/json
+
+{
+  "title": "The Great Gatsby",
+  "author": "F. Scott Fitzgerald",
+  "rating": 5
+}
+
+### get
+
+GET http://localhost:3000/books
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTM5NTM1MzcsInN1YiI6IjEifQ.hUjnVLcSqMlYIr26KWYWpefnpJn0qUzErugMqNbnKac
+Content-Type: application/json

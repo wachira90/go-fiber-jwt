@@ -1,9 +1,22 @@
 # go-fiber-jwt
 golang fiber jsonwebttoken
 
+## version
+
+```
+go version go1.21.1 windows/amd64
+golang.org/x/crypto v0.22.0
+github.com/dgrijalva/jwt-go in github.com/dgrijalva/jwt-go v3.2.0+incompatible
+github.com/gofiber/fiber/v2 in github.com/gofiber/fiber/v2 v2.52.4
+golang.org/x/crypto/bcrypt in golang.org/x/crypto v0.22.0
+gorm.io/driver/postgres in gorm.io/driver/postgres v1.5.7
+gorm.io/gorm in gorm.io/gorm v1.25.9
+golang.org/x/sys v0.19.0
+```
 
 ## command 
 
+```
 git clone 
 
 cd go-fiber-jwt
@@ -11,7 +24,7 @@ cd go-fiber-jwt
 go mod init go-fiber-jwt
 
 go mod tidy
-
+```
 
 ## register 
 
@@ -70,4 +83,52 @@ Connection: close
 }
 ```
 
+## add data (when missing no header authen)
+
+```
+POST http://localhost:3000/books
+Content-Type: application/json
+
+{
+  "title": "The Great Gatsby",
+  "author": "F. Scott Fitzgerald",
+  "rating": 5
+}
+```
+
+## result (when missing no header authen)
+
+```
+HTTP/1.1 401 Unauthorized
+Date: Tue, 23 Apr 2024 10:04:59 GMT
+Content-Type: application/json
+Content-Length: 51
+Connection: close
+
+{
+  "error": true,
+  "msg": "Missing Authorization header"
+}
+```
+
 ## add data
+
+```
+POST http://localhost:3000/books
+Authorization: <TOKEN>
+Content-Type: application/json
+
+{
+  "title": "The Great Gatsby",
+  "author": "F. Scott Fitzgerald",
+  "rating": 5
+}
+```
+
+## get data
+
+```
+GET http://localhost:3000/books
+Authorization: <TOKEN>
+Content-Type: application/json
+```
