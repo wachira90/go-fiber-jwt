@@ -5,6 +5,7 @@ golang fiber jsonwebttoken
 
 ```
 go version go1.21.1 windows/amd64
+
 golang.org/x/crypto v0.22.0
 github.com/dgrijalva/jwt-go in github.com/dgrijalva/jwt-go v3.2.0+incompatible
 github.com/gofiber/fiber/v2 in github.com/gofiber/fiber/v2 v2.52.4
@@ -17,7 +18,7 @@ golang.org/x/sys v0.19.0
 ## command 
 
 ```
-git clone 
+git clone -b main https://github.com/wachira90/go-fiber-jwt.git
 
 cd go-fiber-jwt
 
